@@ -25,7 +25,7 @@ phases:
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"enrollment-system","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedef.json
-      - cat imagedefinitions.json
+      - cat imagedef.json
 artifacts:
   files:
       - echo Build completed successfully
