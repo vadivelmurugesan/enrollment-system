@@ -26,10 +26,9 @@ phases:
       - echo Writing image definitions file...
       - printf '[{"name":"enrollment-system","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json
-artifacts:
-  files:
       - echo Build completed successfully
 artifacts:
   files:
+    - imagedefinitions.json
     - target/*.jar
   discard-paths: yes
