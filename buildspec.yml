@@ -24,13 +24,13 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"enrollment-system","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedef.json
-      - cat imagedef.json
+      - printf '[{"name":"enrollment-system","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - cat imagedefinitions.json
 artifacts:
   files:
       - echo Build completed successfully
 artifacts:
   files:
-    - imagedef.json
+    - imagedefinitions.json
     - target/enrollment-system.jar
   discard-paths: yes
