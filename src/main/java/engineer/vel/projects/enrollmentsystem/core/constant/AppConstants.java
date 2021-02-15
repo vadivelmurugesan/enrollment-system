@@ -1,7 +1,7 @@
 package engineer.vel.projects.enrollmentsystem.core.constant;
 
 /**
- * This class contains the constants used across the application.
+ * This class contains the constants used across the enrollment system application.
  * 
  * @author Vadivel Murugesan
  */
