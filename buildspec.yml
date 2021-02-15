@@ -33,4 +33,3 @@ artifacts:
   files:
     - imagedefinitions.json
     - target/enrollment-system.jar
-  discard-paths: yes
