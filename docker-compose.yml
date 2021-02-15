@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+   mongodb:
+      image: mongo:latest
+      container_name: mongodb
+      environment:
+         MONGO_INITDB_ROOT_USERNAME: admin
+         MONGO_INITDB_ROOT_PASSWORD: password
+         MONGO_INITDB_DATABASE: enrollsys_db
+      restart: always
+      ports:
+      - 27017:27017
+   enrollment-system:
+      image: enrollment-system:1.0
+      container_name: enrollment-system
+      restart: always
+      ports:
+      - 8080:8080
+      links:
+      - mongodb
