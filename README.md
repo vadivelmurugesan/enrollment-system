@@ -192,14 +192,15 @@ Note: ***It is recommended to use [http://localhost:8080/swagger-ui.html](http:/
 
 If any code pushes to this GitHub repository, the Git webhook initiates the AWS CodePipeline automatically. 
 
-**buildSpec.yml** helps to do the following
+***buildSpec.yml*** helps to do the following
+
 - Execute the maven test and build
 - Create a docker image and push it to ECR
-- And Create an imagedefinitions.json file for the deployment
+- Create an imagedefinitions.json file for the deployment
 
-**The code pipeline for this application consists of three stages: **
-
-	- Code Source - Pull from Github
-        - Code Build - Maven build and Create a docker Image
-        - and Code Deploy - Deploy into ECS - Ec2 instance
+The code pipeline for this application consists of three stages:
+- Code Source - Pull from Github
+- Code Build - Maven build and Create a docker Image
+- Code Deploy - Deploy into ECS - Ec2 instance
     
+Note: This code has been reviewed by SonarQube.
