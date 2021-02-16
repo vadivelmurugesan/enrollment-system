@@ -13,7 +13,7 @@ The users of the system will consist of both school administrators and students.
     - Maven
     - & Libraries [Lombok, Map Struct, Mockito, Junit 5 and Swagger Open Api]
 - **DevOps**
-    - Docker
+    - Docker, AWS (Code PipeLine, ECR and ECS - (EC2))
     
 ## Pre-requisites
  
@@ -188,4 +188,17 @@ docker exec -it mongodb bash
 
 Note: ***It is recommended to use [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) for detailed information.***
 
+#### Continuous deployment of above Rest API
+
+If any code pushes to this GitHub repository, the Git webhook initiates the AWS CodePipeline automatically. 
+
+buildSpec.yml helps to do the following
+Execute the maven test and build
+Create a docker image and push it to ECR
+And Create an imagedefinitions.json file for the deployment
+
+The code pipeline for this application consists of three stages: 
+	Code Source - Pull from Github
+        Code Build - Maven build and Create a docker Image
+        and Code Deploy - Deploy into ECS - Ec2 instance
     
